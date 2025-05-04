@@ -1,21 +1,54 @@
+/* Estilos generales para la sección */
 .features-section {
-    padding: 2rem;
-    background-color: #ffffff;
-    text-align: center;
-  }
-  .features {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1.5rem;
-  }
+  padding: 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cards se ajusten en varias filas */
+  justify-content: center; /* Centra las cards horizontalmente */
+  gap: 1.5rem; /* Espaciado entre las cards */
+}
+
+.feature {
+  flex: 1 1 calc(33.333% - 1.5rem); /* Ocupa un tercio del ancho con espacio entre elementos */
+  max-width: 300px; /* Ancho máximo para evitar que se estiren demasiado */
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
   .feature {
-    max-width: 30%;
+    flex: 1 1 calc(50% - 1.5rem); /* Ocupa la mitad del ancho en pantallas medianas */
   }
-  .feature h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .feature {
+    flex: 1 1 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
   }
-  .feature p {
-    font-size: 1rem;
-    color: #666;
-  }
+}
